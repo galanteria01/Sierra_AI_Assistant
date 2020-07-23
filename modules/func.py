@@ -44,7 +44,7 @@ def wish_me():
 
 def takeCommand():
     r = sp.Recognizer()
-    with sp.Microphone() as source:
+    with sp.Microphone(device_index=0) as source:
         print("Listening....")
         r.pause_threshold = 1
         audio = r.listen(source)
