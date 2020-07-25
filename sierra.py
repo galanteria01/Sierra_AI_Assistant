@@ -1,28 +1,16 @@
 import pyttsx3
 import datetime
+from modules.func import *
+import speech_recognition as sp
 
 
-engine = pyttsx3.init()
 
 
-def speak(audio):
-    engine.say(audio)
-    engine.runAndWait()
-
-
-def time():
-    tim = datetime.datetime.now().strftime("%I:%M:%S")
-    speak(tim)
-
-
-def date():
-    year = int(datetime.datetime.now().year)
-    month = int(datetime.datetime.now().month)
-    day = int(datetime.datetime.now().day)
-    speak(day)
-    speak(month)
-    speak(year)
-
-
-date()
-time()
+if __name__ == '__main__':
+    wish_me()
+    while True:
+        query = takeCommand().lower()
+        if "time" in query:
+            time()
+        elif "date" in query:
+            date()
