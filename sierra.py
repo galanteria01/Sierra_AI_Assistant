@@ -3,6 +3,7 @@ import datetime
 from modules.func import *
 import speech_recognition as sp
 import wikipedia
+import smtplib
 
 
 
@@ -21,7 +22,17 @@ if __name__ == '__main__':
             result = wikipedia.summary(query,sentences=2)
             print(result)
             speak(result)
-
+        elif "send email" in query:
+            try:
+                speak("What should i convey?")
+                content = takeCommand()
+                speak("whom must i send email")
+                to = takeCommand()
+                sendEmail(to,content)
+                speak("Email has been sent succesfully")
+            except Exception as e:
+                print(e)
+                speak("sorry! unable to send mail")
         elif "offline" in query:
             quit()
 

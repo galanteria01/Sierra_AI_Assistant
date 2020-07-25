@@ -2,6 +2,7 @@ import pyttsx3
 import datetime
 import speech_recognition as sp
 import wikipedia
+import smtplib
 
 engine = pyttsx3.init()
 
@@ -59,3 +60,13 @@ def takeCommand():
         return None
 
     return query
+
+
+def sendEmail(to,content):
+    server = smtplib.SMTP('smtp.gmail.com',587)
+    server.ehlo()
+    server.starttls()
+    server.login('laddoo22032001@gmail.com','baatcheet',)
+    server.sendmail('laddoo22032001@gmail.com',to,content)
+    server.close()
+
