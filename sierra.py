@@ -33,6 +33,9 @@ if __name__ == '__main__':
             except Exception as e:
                 print(e)
                 speak("sorry! unable to send mail")
+        elif "search in chrome" in query:
+            speak("what should i search sir")
+
         elif "offline" in query:
             quit()
 
