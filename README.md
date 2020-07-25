@@ -1,8 +1,16 @@
 # Sierra_AI_Assistant
+## Head
+![Sierra](https://cache.redgiant.com/wp-assets/2016/09/19222442/Sierra-Ready-Blog.jpg)
 This is an AI based assistant
 
-##Head
-![Sierra](https://cache.redgiant.com/wp-assets/2016/09/19222442/Sierra-Ready-Blog.jpg)
 
 ##Installing basic stuff required
-<code> sude apt-get install python3</code>
+
+<code> sudo apt-get install python3</code>
+<br>
+<code>pip3 install SpeechRecognition</code>
+<br>
+<code>pip3 install pyttsx3</code>
+<br>
+
+
