@@ -12,6 +12,7 @@ def speak(audio):
 
 def time():
     tim = datetime.datetime.now().strftime("%I:%M:%S")
+    speak("the current time is")
     speak(tim)
 
 
@@ -19,6 +20,7 @@ def date():
     year = int(datetime.datetime.now().year)
     month = int(datetime.datetime.now().month)
     day = int(datetime.datetime.now().day)
+    speak("the current date is")
     speak(day)
     speak(month)
     speak(year)
@@ -26,9 +28,7 @@ def date():
 
 def wish_me():
     speak("Welcome back sir")
-    speak("the current time is")
     time()
-    speak("the current date is")
     date()
     hour = datetime.datetime.now().hour
     if hour >= 6 and hour <= 12:
@@ -45,6 +45,7 @@ def wish_me():
 def takeCommand():
     r = sp.Recognizer()
     with sp.Microphone(device_index=0) as source:
+        r.adjust_for_ambient_noise(source, duration=1)
         print("Listening....")
         r.pause_threshold = 1
         audio = r.listen(source)
@@ -55,6 +56,7 @@ def takeCommand():
     except Exception as e:
         print(e)
         speak("say that again please")
+        takeCommand()
         return None
 
     return query
