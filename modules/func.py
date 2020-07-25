@@ -1,6 +1,7 @@
 import pyttsx3
 import datetime
 import speech_recognition as sp
+import wikipedia
 
 engine = pyttsx3.init()
 
@@ -28,8 +29,6 @@ def date():
 
 def wish_me():
     speak("Welcome back sir")
-    time()
-    date()
     hour = datetime.datetime.now().hour
     if hour >= 6 and hour <= 12:
         speak("good morning sir")
