@@ -3,12 +3,12 @@ import datetime
 import speech_recognition as sp
 import wikipedia
 import smtplib
+import webbrowser as wb
 
 engine = pyttsx3.init()
-engine.setProperty('rate',150)
+engine.setProperty('rate',160)
 
-voices = engine.getProperty('voices')
-engine.setProperty('voice',voices[0].id)
+
 
 
 def speak(audio):
