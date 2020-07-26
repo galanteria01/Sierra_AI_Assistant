@@ -5,6 +5,7 @@ import speech_recognition as sp
 import wikipedia
 import smtplib
 import webbrowser as wb
+import os
 
 
 if __name__ == '__main__':
@@ -32,10 +33,12 @@ if __name__ == '__main__':
             except Exception as e:
                 print(e)
                 speak("sorry! unable to send mail")
-        elif "search in chrome" in query:
-            speak("what should i search sir")
-
-
+        elif 'logout' in query:
+            os.system('shutdown -l')
+        elif 'restart' in query:
+            os.system('shutdown /r /t 1')
+        elif 'shutdown' in query:
+            os.system('shutdown /s /t 1')
         elif "offline" in query:
             quit()
 

@@ -4,6 +4,7 @@ import speech_recognition as sp
 import wikipedia
 import smtplib
 import webbrowser as wb
+import os
 
 engine = pyttsx3.init()
 engine.setProperty('rate',160)
