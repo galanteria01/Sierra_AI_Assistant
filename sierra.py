@@ -39,6 +39,11 @@ if __name__ == '__main__':
             os.system('shutdown /r /t 1')
         elif 'shutdown' in query:
             os.system('shutdown /s /t 1')
+        elif 'play songs' in query:
+            songsDir = '/home/shanu/Documents'
+            songs = os.listdir(songsDir)
+            os.startfile(os.path.join(songsDir,songs[0]))
+
         elif "offline" in query:
             quit()
 
