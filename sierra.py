@@ -14,14 +14,17 @@ if __name__ == '__main__':
         query = takeCommand().lower()
         if "time" in query:
             time()
+
         elif "date" in query:
             date()
+
         elif "wikipedia" in query:
             speak("Searching on wiki")
             query = query.replace("wikipedia","")
             result = wikipedia.summary(query,sentences=2)
             print(result)
             speak(result)
+
         elif "send email" in query:
             try:
                 speak("What should i convey?")
@@ -33,16 +36,28 @@ if __name__ == '__main__':
             except Exception as e:
                 print(e)
                 speak("sorry! unable to send mail")
+
         elif 'logout' in query:
             os.system('shutdown -l')
+
         elif 'restart' in query:
             os.system('shutdown /r /t 1')
+
         elif 'shutdown' in query:
             os.system('shutdown /s /t 1')
+
         elif 'play songs' in query:
             songsDir = '/home/shanu/Documents'
             songs = os.listdir(songsDir)
             os.startfile(os.path.join(songsDir,songs[0]))
+
+        elif 'remember that' in query:
+            speak("what should i remember sir")
+            rememberMessage = takeCommand()
+            speak("you said me to remember"+rememberMessage)
+            remember = open('data.txt','w')
+            remember.write(rememberMessage)
+            remember.close()
 
         elif 'about you' in query:
             speak('i am sierra! an Artificial intelligence assistant by galanteria! i can do some basic stuff uptill now,but definately do more with time, As i am AI')
