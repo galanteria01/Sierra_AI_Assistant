@@ -5,6 +5,8 @@ import wikipedia
 import smtplib
 import webbrowser as wb
 import os
+import pyautogui  as pag
+
 
 engine = pyttsx3.init()
 engine.setProperty('rate',160)
@@ -74,4 +76,8 @@ def sendEmail(to,content):
     server.login('laddoo22032001@gmail.com','baatcheet',)
     server.sendmail('laddoo22032001@gmail.com',to,content)
     server.close()
+
+def screenshot():
+    img = pag.screenshot()
+    img.save('/home/shanu/Documents')
 
