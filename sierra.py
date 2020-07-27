@@ -44,6 +44,9 @@ if __name__ == '__main__':
             songs = os.listdir(songsDir)
             os.startfile(os.path.join(songsDir,songs[0]))
 
+        elif 'about you' in query:
+            speak('i am sierra! an Artificial intelligence assistant by galanteria! i can do some basic stuff uptill now,but definately do more with time, As i am AI')
+
         elif "offline" in query:
             quit()
 
