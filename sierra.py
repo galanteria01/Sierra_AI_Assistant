@@ -55,10 +55,14 @@ if __name__ == '__main__':
             speak("what should i remember sir")
             rememberMessage = takeCommand()
             speak("you said me to remember"+rememberMessage)
-            remember = open('data.txt','w')
+            remember = open('data.txt', 'w')
             remember.write(rememberMessage)
             remember.close()
 
+        elif 'do you know anything' in query:
+            remember = open('data.txt', 'r')
+            speak("you said me to remember that" + remember.read())
+            
         elif 'about you' in query:
             speak('i am sierra! an Artificial intelligence assistant by galanteria! i can do some basic stuff uptill now,but definately do more with time, As i am AI')
 
