@@ -66,11 +66,13 @@ if __name__ == '__main__':
             speak("you said me to remember that" + remember.read())
 
         elif 'about you' in query:
-            speak('i am sierra! an Artificial intelligence assistant by galanteria! i can do some basic stuff uptill now,but definately do more with time, As i am AI')
+            speak('''i am sierra! an Artificial intelligence assistant by galanteria!
+             i can do some basic stuff uptill now,but definately do more with time, As i am AI''')
 
         elif 'screenshot'  in query:
             screenshot()
             speak("screenshot has been took and saved to Documents")
+
 
         elif "offline" in query:
             quit()

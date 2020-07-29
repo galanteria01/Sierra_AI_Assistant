@@ -5,7 +5,7 @@ import wikipedia
 import smtplib
 import webbrowser as wb
 import os
-import pyautogui  as pag
+import pyautogui as pag
 
 
 engine = pyttsx3.init()
@@ -58,7 +58,7 @@ def takeCommand():
         audio = r.listen(source)
     try:
         print("Recognising...")
-        query = r.recognize_google(audio,language="en-in")
+        query = r.recognize_google(audio,language="en-us")
         print(query)
     except Exception as e:
         print(e)
