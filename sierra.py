@@ -69,10 +69,18 @@ if __name__ == '__main__':
             speak('''i am sierra! an Artificial intelligence assistant by galanteria!
              i can do some basic stuff uptill now,but definately do more with time, As i am AI''')
 
-        elif 'screenshot'  in query:
+        elif 'screenshot' in query:
             screenshot()
             speak("screenshot has been took and saved to Documents")
 
+        elif 'update linux' in query:
+            os.system('sudo apt update')
+            os.system('sudo apt upgrade')
+
+        elif 'install app' in query:
+            speak("tell the name of app you want to install sir")
+            app = takeCommand()
+            os.system('sudo apt-get install'+app)
 
         elif "offline" in query:
             quit()
