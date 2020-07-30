@@ -12,8 +12,6 @@ engine = pyttsx3.init()
 engine.setProperty('rate',160)
 
 
-
-
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()

@@ -74,8 +74,12 @@ if __name__ == '__main__':
             speak("screenshot has been took and saved to Documents")
 
         elif 'update linux' in query:
-            os.system('sudo apt update')
-            os.system('sudo apt upgrade')
+            speak("do you want to update or upgrade")
+            commandInput = takeCommand()
+            if 'update' in commandInput:
+                os.system('sudo apt update')
+            elif 'upgrade' in commandInput:
+                os.system('sudo apt upgrade')
 
         elif 'install app' in query:
             speak("tell the name of app you want to install sir")
