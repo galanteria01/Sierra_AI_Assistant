@@ -1,3 +1,4 @@
+# Imported libraries essential
 import pyttsx3
 import datetime
 from modules.func import *
@@ -9,7 +10,7 @@ import os
 import pyautogui as pag
 
 
-
+# DEFINED main function,Its where everything starts
 if __name__ == '__main__':
     wish_me()
     while True:
