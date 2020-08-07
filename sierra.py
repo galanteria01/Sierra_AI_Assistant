@@ -99,6 +99,9 @@ if __name__ == '__main__':
             speak("telling a story")
             tellStory()
 
+        elif "tell about developer":
+            speak("i am developed by shanu and written in python, thanks to developer for giving life")
+
         elif "offline" in query:
             speak("going offline, goodbye!")
             quit()
