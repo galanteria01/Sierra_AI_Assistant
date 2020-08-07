@@ -99,8 +99,17 @@ if __name__ == '__main__':
             speak("telling a story")
             tellStory()
 
-        elif "tell about developer":
+        elif "tell about developer" in query:
             speak("i am developed by shanu and written in python, thanks to developer for giving life")
+
+        elif "tell a factorial" in query:
+            speak("what number")
+            num = int(takeCommand())
+            sum=1
+            for i in range(num+1):
+                sum = sum*i
+            speak(sum)
+
 
         elif "offline" in query:
             speak("going offline, goodbye!")
