@@ -110,6 +110,8 @@ if __name__ == '__main__':
                 sum = sum*i
             speak(sum)
 
+        elif "motivate me" in query:
+            speak('you will be best,someday,somehow, NEVER STOP TRYING')
 
         elif "offline" in query:
             speak("going offline, goodbye!")
