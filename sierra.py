@@ -95,6 +95,10 @@ if __name__ == '__main__':
             speak("installing app now")
             os.system('sudo apt-get install'+app)
 
+        elif 'tell a story' in query:
+            speak("telling a story")
+            tellStory()
+
         elif "offline" in query:
             speak("going offline, goodbye!")
             quit()
