@@ -41,15 +41,19 @@ if __name__ == '__main__':
                 speak("sorry! unable to send mail")
 
         elif 'logout' in query:
+            speak("logging out")
             os.system('shutdown -l')
 
         elif 'restart' in query:
+            speak("restarting the desktop sir")
             os.system('shutdown /r /t 1')
 
         elif 'shutdown' in query:
+            speak("shutting down, hope you saved your data")
             os.system('shutdown /s /t 1')
 
         elif 'play songs' in query:
+            speak("playing songs now")
             songsDir = '/home/shanu/Documents'
             songs = os.listdir(songsDir)
             os.startfile(os.path.join(songsDir,songs[0]))
@@ -71,6 +75,7 @@ if __name__ == '__main__':
              i can do some basic stuff uptill now,but definately do more with time, As i am AI''')
 
         elif 'screenshot' in query:
+            speak("taking a screenshot")
             screenshot()
             speak("screenshot has been took and saved to Documents")
 
@@ -78,16 +83,20 @@ if __name__ == '__main__':
             speak("do you want to update or upgrade")
             commandInput = takeCommand()
             if 'update' in commandInput:
+                speak("updating the repository")
                 os.system('sudo apt update')
             elif 'upgrade' in commandInput:
+                speak("upgrading the repository")
                 os.system('sudo apt upgrade')
 
         elif 'install app' in query:
             speak("tell the name of app you want to install sir")
             app = takeCommand()
+            speak("installing app now")
             os.system('sudo apt-get install'+app)
 
         elif "offline" in query:
+            speak("going offline, goodbye!")
             quit()
 
 
