@@ -6,7 +6,8 @@ import smtplib
 import webbrowser as wb
 import os
 import pyautogui as pag
-
+from instapy import InstaPy
+from selenium import *
 
 engine = pyttsx3.init()
 engine.setProperty('rate',160)

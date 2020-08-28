@@ -8,6 +8,8 @@ import smtplib
 import webbrowser as wb
 import os
 import pyautogui as pag
+from instapy import InstaPy
+from selenium import webdriver
 
 
 # DEFINED main function,Its where everything starts
@@ -112,6 +114,26 @@ if __name__ == '__main__':
 
         elif "motivate me" in query:
             speak('you will be best,someday,somehow, NEVER STOP TRYING')
+
+        elif "open instagram" in query:
+            speak("Tell you're username sir")
+            username = takeCommand()
+            speak("Tell your password sir")
+            password = takeCommand()
+            session = InstaPy(username,password)
+            # Can make modifications to automate things
+            speak("You are logged in")
+
+        elif "search on google" in query:
+            speak("tell about what to search sir")
+            searchText = takeCommand()
+            browser = webdriver.Firefox()
+            browser.implicitly_wait(5)
+            browser.get('https://www.google.com')
+            search = browser.find_element_by_css_selector("input[name='text']")
+            search.send_keys(searchText)
+            button = browser.find_element_by_css_selector("//button[name='btnK']")
+            speak("Here are the relevant results sir")
 
         elif "offline" in query:
             speak("going offline, goodbye!")
