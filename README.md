@@ -4,7 +4,7 @@
 This is an AI based assistant
 
 
-##Installing basic stuff required
+## Installing basic stuff required
 
 <code> sudo apt-get install python3</code>
 <br>
