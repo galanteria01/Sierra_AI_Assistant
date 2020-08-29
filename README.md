@@ -12,5 +12,14 @@ This is an AI based assistant
 <br>
 <code>pip3 install pyttsx3</code>
 <br>
+<code>pip3 install selenium</code>
+<br>
+<code>pip3 install wikipedia</code>
+<br>
+<code>pip3 install instapy</code>
+<br>
+<code>pip3 install smtplib</code>
+<br>
+<code>pip3 install pyautogui</code>
 
 
