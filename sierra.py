@@ -81,7 +81,7 @@ if __name__ == '__main__':
             screenshot()
             speak("screenshot has been took and saved to Documents")
 
-        elif 'update linux' in query:
+        elif 'update ubuntu' in query:
             speak("do you want to update or upgrade")
             commandInput = takeCommand()
             if 'update' in commandInput:
@@ -95,7 +95,14 @@ if __name__ == '__main__':
             speak("tell the name of app you want to install sir")
             app = takeCommand()
             speak("installing app now")
-            os.system('sudo apt-get install'+app)
+            try:
+                os.system('sudo apt-get install'+app)
+            except Exception as e:
+                speak(e)
+            try:
+                os.system('snap install'+app)
+            except Exception as e:
+                speak(e)
 
         elif 'tell a story' in query:
             speak("telling a story")
@@ -128,12 +135,18 @@ if __name__ == '__main__':
             speak("tell about what to search sir")
             searchText = takeCommand()
             browser = webdriver.Firefox()
-            browser.implicitly_wait(5)
+            browser.implicitly_wait(3)
             browser.get('https://www.google.com')
             search = browser.find_element_by_css_selector("input[name='text']")
             search.send_keys(searchText)
             button = browser.find_element_by_css_selector("//button[name='btnK']")
             speak("Here are the relevant results sir")
+
+        elif "open github" in query:
+            speak("opening github sir")
+            brw = webdriver.Firefox()
+            brw.implicitly_wait(3)
+            brw.get('https://github.com')
 
         elif "offline" in query:
             speak("going offline, goodbye!")
