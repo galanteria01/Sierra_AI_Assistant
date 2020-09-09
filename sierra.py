@@ -41,7 +41,7 @@ if __name__ == '__main__':
             os.system('shutdown -l')
 
         elif 'restart system' in query:
-            speak("restarting the desktop sir")
+            speak("restarting the system sir")
             os.system('shutdown /r /t 1')
 
         elif 'shutdown system' in query:
