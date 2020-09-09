@@ -145,5 +145,3 @@ if __name__ == '__main__':
         elif "offline" in query:
             speak("going offline, goodbye!")
             quit()
-
-
