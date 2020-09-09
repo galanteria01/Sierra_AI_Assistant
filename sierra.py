@@ -1,13 +1,7 @@
 # Imported libraries essential
-import pyttsx3
-import datetime
 from modules.func import *
-import speech_recognition as sp
 import wikipedia
-import smtplib
-import webbrowser as wb
 import os
-import pyautogui as pag
 from instapy import InstaPy
 from selenium import webdriver
 
@@ -25,8 +19,8 @@ if __name__ == '__main__':
 
         elif "wikipedia" in query:
             speak("Searching on wiki")
-            query = query.replace("wikipedia","")
-            result = wikipedia.summary(query,sentences=2)
+            query = query.replace("wikipedia", "")
+            result = wikipedia.summary(query, sentences=2)
             print(result)
             speak(result)
 
@@ -36,21 +30,21 @@ if __name__ == '__main__':
                 content = takeCommand()
                 speak("whom must i send email")
                 to = takeCommand()
-                sendEmail(to,content)
+                sendEmail(to, content)
                 speak("Email has been sent succesfully")
             except Exception as e:
                 print(e)
                 speak("sorry! unable to send mail")
 
-        elif 'logout' in query:
-            speak("logging out")
+        elif 'logout system' in query:
+            speak("logging out system sir")
             os.system('shutdown -l')
 
-        elif 'restart' in query:
+        elif 'restart system' in query:
             speak("restarting the desktop sir")
             os.system('shutdown /r /t 1')
 
-        elif 'shutdown' in query:
+        elif 'shutdown system' in query:
             speak("shutting down, hope you saved your data")
             os.system('shutdown /s /t 1')
 
@@ -58,7 +52,7 @@ if __name__ == '__main__':
             speak("playing songs now")
             songsDir = '/home/shanu/Documents'
             songs = os.listdir(songsDir)
-            os.startfile(os.path.join(songsDir,songs[0]))
+            os.startfile(os.path.join(songsDir, songs[0]))
 
         elif 'remember that' in query:
             speak("what should i remember sir")
@@ -93,14 +87,14 @@ if __name__ == '__main__':
 
         elif 'install app' in query:
             speak("tell the name of app you want to install sir")
-            app = takeCommand()
+            app_name = takeCommand()
             speak("installing app now")
             try:
-                os.system('sudo apt-get install'+app)
+                os.system('sudo apt-get install'+app_name)
             except Exception as e:
                 speak(e)
             try:
-                os.system('snap install'+app)
+                os.system('snap install'+app_name)
             except Exception as e:
                 speak(e)
 
@@ -114,10 +108,10 @@ if __name__ == '__main__':
         elif "tell a factorial" in query:
             speak("what number")
             num = int(takeCommand())
-            sum=1
+            sum_total = 1
             for i in range(num+1):
-                sum = sum*i
-            speak(sum)
+                sum_total = sum_total*i
+            speak(sum_total)
 
         elif "motivate me" in query:
             speak('you will be best,someday,somehow, NEVER STOP TRYING')
@@ -127,7 +121,7 @@ if __name__ == '__main__':
             username = takeCommand()
             speak("Tell your password sir")
             password = takeCommand()
-            session = InstaPy(username,password)
+            session = InstaPy(username, password)
             # Can make modifications to automate things
             speak("You are logged in")
 

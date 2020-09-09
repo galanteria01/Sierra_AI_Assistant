@@ -1,13 +1,8 @@
 import pyttsx3
 import datetime
 import speech_recognition as sp
-import wikipedia
 import smtplib
-import webbrowser as wb
-import os
 import pyautogui as pag
-from instapy import InstaPy
-from selenium import *
 
 engine = pyttsx3.init()
 engine.setProperty('rate',160)
