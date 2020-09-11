@@ -22,4 +22,5 @@ This is an AI based assistant
 <br>
 <code>pip3 install pyautogui</code>
 
-
+# To clone use
+<code>git clone https://github.com/galanteria01/Sierra_AI_Assistant.git </code>
